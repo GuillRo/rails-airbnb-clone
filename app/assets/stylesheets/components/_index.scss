@@ -4,6 +4,10 @@
 @import "banner";
 @import "card";
 
+.wrapper {
+  background-color: rgb(202, 202, 202);
+}
+
 .container {
   display:flex;
   padding:0;
@@ -13,6 +17,7 @@
 
 .cards-row{
   display:flex;
+  flex-wrap: wrap;
   width: 80%;
   // position: relative;
   justify-content: center;

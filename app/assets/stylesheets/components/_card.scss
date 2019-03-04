@@ -1,8 +1,37 @@
 .card{
   display: flex;
+  flex-grow: 1;
   position: relative;
   background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));
   margin: 20px;
-  // height: 60px;
-  // width: 75px;
+  height: 200px;
+  width: 320px;
+  border: 1px solid black;
+  padding: 0;
+}
+
+// .card-footer{
+//   position: absolute;
+//   background-color: white;
+//   width:100%;
+// }
+
+.card-description{
+  background-color: white;
+  position: absolute;
+  bottom: 5px;
+  padding: 0 5px 0 5px;
+  h2{
+    font-size: 18px;
+    margin:0;
+  }
+  p{
+    font-size: 15px;
+    margin:0;
+  }
+}
+.card-location{
+  position: absolute;
+  top: 5px;
+  padding: 0 5px 0 5px;
 }
