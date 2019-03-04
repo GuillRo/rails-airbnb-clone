@@ -26,11 +26,21 @@ Booking.new(date_begin: Date.new(2019,3,10), date_end: Date.new(2019,3,14) , sta
 Review.new(content: "Génial, super expérience", score: 4, user_id: 2, flat_id: 3)
 Review.new(content: "Déçu par la propreté et la qualité du matelas", score: 1, user_id: 1, flat_id: 1)
 Review.new(content: "Ideal pour un weekend en amoureux", score: 4, user_id: 5, flat_id: 4)
-Review.new(content: "Expérience mitigé, le quartier est très bruyant" score: 2, user_id: 5, flat_id: 5)
+Review.new(content: "Expérience mitigé, le quartier est très bruyant", score: 2, user_id: 5, flat_id: 5)
 Review.new(content: "Génial, Je recommande fortement", score: 5, user_id: 4, flat_id: 3)
 
-FlatAmenitie.new(flat_id: 4, amenitie_id: 2,5,7,4)
-FlatAmenitie.new(flat_id: 3, amenitie_id: 1,2,3,5,7,4)
-FlatAmenitie.new(flat_id: 2, amenitie_id: 1,2,3,4,5,6,7)
-FlatAmenitie.new(flat_id: 1, amenitie_id: 3,4,7,5)
-FlatAmenitie.new(flat_id: 5, amenitie_id: 1,5,7,4,2,3)
+FlatAmenitie.new(flat_id: 4, amenitie_id: 2)
+FlatAmenitie.new(flat_id: 4, amenitie_id: 5)
+FlatAmenitie.new(flat_id: 4, amenitie_id: 3)
+FlatAmenitie.new(flat_id: 3, amenitie_id: 1)
+FlatAmenitie.new(flat_id: 3, amenitie_id: 2)
+
+
+Amenitie.new(name: "WiFi")
+Amenitie.new(name: "Lave linge")
+Amenitie.new(name: "Cuisine")
+Amenitie.new(name: "Bureau")
+Amenitie.new(name: "Machine à laver")
+
+
+
