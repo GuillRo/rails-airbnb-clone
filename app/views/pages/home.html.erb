@@ -1,19 +1,25 @@
-<%# <div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3"> %>
 <div class="wrapper">
-  <div class="banner"">
-    <div class="banner-content">
-      <h1 class="title-main">PoorB&B</h1>
-      <p class="catch-phrase">An experience you will never forget</p>
-      <%# <a class="btn btn-primary btn-lg">Start now</a> %>
-      <input type="text" placeholder="Search..." class="searchbar">
-    </div>
-    <%# </div>
+  <div class="container" id="banner-big">
+    <div class="banner"">
+      <div class="banner-content">
+        <h1 class="title-main">PoorB&B</h1>
+        <p class="catch-phrase">An experience you will never forget</p>
+        <%# <a class="btn btn-primary btn-lg">Start now</a> %>
+        <input type="text" placeholder="Search..." class="searchbar">
       </div>
-    </div> %>
+    </div>
   </div>
-  
-  <div class="suggestions">
+  <div class="container" id="suggestion-row">
+    <div class="cards-row">
+      <div>
+        <%= render 'shared/card' %>
+      </div>
+      <div>
+        <%= render 'shared/card' %>
+      </div>
+      <div>
+        <%= render 'shared/card' %>
+      </div>
+    </div>
   </div>
 </div>

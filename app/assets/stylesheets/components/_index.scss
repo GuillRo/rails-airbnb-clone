@@ -2,14 +2,18 @@
 @import "alert";
 @import "navbar";
 @import "banner";
+@import "card";
 
-.wrapper {
+.container {
   display:flex;
   padding:0;
   width:100%;
   justify-content: center;
 }
 
-// .wrapper > * {
-//   flex: 1 100%;
-// }
+.cards-row{
+  display:flex;
+  width: 80%;
+  // position: relative;
+  justify-content: center;
+}
