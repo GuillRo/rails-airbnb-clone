@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   # Flat resources
-  resources :flat, only: [:index, :new, :create]
-  resources :booking, only: [:index, :new, :create]
+  resources :flats, only: [:index, :new, :create, :show]
+  resources :bookings, only: [:index, :new, :create]
 end
