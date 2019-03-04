@@ -1,0 +1,2 @@
+class Amenitie < ApplicationRecord
+end
