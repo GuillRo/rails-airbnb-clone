@@ -1,2 +1,0 @@
-class Amenditie < ApplicationRecord
-end
