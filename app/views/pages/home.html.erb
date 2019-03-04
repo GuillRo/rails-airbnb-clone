@@ -1,2 +1,25 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="wrapper">
+  <div class="container" id="banner-big">
+    <div class="banner"">
+      <div class="banner-content">
+        <h1 class="title-main">PoorB&B</h1>
+        <p class="catch-phrase">An experience you will never forget</p>
+        <%# <a class="btn btn-primary btn-lg">Start now</a> %>
+        <input type="text" placeholder="Search..." class="searchbar">
+      </div>
+    </div>
+  </div>
+  <div class="container" id="suggestion-row">
+    <div class="cards-row">
+      <div>
+        <%= render 'shared/card' %>
+      </div>
+      <div>
+        <%= render 'shared/card' %>
+      </div>
+      <div>
+        <%= render 'shared/card' %>
+      </div>
+    </div>
+  </div>
+</div>
