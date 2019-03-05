@@ -1,15 +1,19 @@
-<p>SHOW A SPECIFIC FLAT</p>
+<div>
+<div class="" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.4) 0%, rgba(0,36,61,0.4) 50%), url(' <%= cl_image_path @flat.photo if @flat.photo.url %> ' )">
+  <h1><%= @flat.title %></h1>
 
-<p><%= @flat.title %> ==> <%= @flat.description %></p>
+</div>
+
+<p> ==> <%= @flat.description %></p>
 
 
 <p>Flat N° <%= @flat.id %> is located @ <%= @flat.address %>, costs <%= @flat.price %>, has <%= @flat.nbr_rooms %> room(s) and <%= @flat.nbr_beds %> bed(s) </p>
 
-
-  <%= button_to "Click here to book this flat", new_booking_path(@flat, @booking), :id => "book_flat_button",
+  <%= button_to "Click here to book this flat", new_booking_url, :id => "book_flat_button",
       :class => "btn btn-primary", :method => :get %>
 
 
-<p>HERE EMBED THE "BOOK" BUTTON</p>
+  <%= button_to "Click here add a review", new_flat_review_url(@flat), :id => "add_review_button",
+      :class => "btn btn-primary", :method => :get %>
 
-
+</div>
