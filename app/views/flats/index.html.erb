@@ -2,11 +2,11 @@
 <div class="text-center"><h1>All the flats</h1></div>
 <div class="flat-cards">
   <% @flats.each do |flat| %>
-    <div class="flat-card">
+    <div class="flat-card text-center">
         <%= link_to flat_path(flat)  do %>
         <div class="flat-card-body" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.4) 0%, rgba(0,36,61,0.4) 50%), url(' <%= cl_image_path flat.photo if flat.photo.url %> ' )">
           <div class="flat-card-description">
-            <%= flat.description %>
+            <%= flat.title %>
         </div>
       </div>
       <% end %>
