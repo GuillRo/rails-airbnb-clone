@@ -5,7 +5,10 @@
         <h1 class="title-main">PoorB&B</h1>
         <p class="catch-phrase">An experience you will never forget</p>
         <%# <a class="btn btn-primary btn-lg">Start now</a> %>
-        <input type="text" placeholder="Search..." class="searchbar">
+
+        <%= button_to "View all flats", flats_path, :id => "all_flats_button",
+      :class => "btn btn-primary", :method => :get %>
+
       </div>
     </div>
   </div>
