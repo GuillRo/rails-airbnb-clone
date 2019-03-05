@@ -6,23 +6,3 @@
 @import "flatcard";
 @import "forms";
 @import "showflat";
-
-.wrapper {
-  background-color: rgb(202, 202, 202);
-}
-
-.home-container {
-  display:flex;
-  padding:0;
-  width:100%;
-  justify-content: center;
-}
-
-.cards-row{
-  display:flex;
-  flex-wrap: wrap;
-  width: 80%;
-  // position: relative;
-  justify-content: center;
-}
-

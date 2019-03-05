@@ -1,9 +1,9 @@
 <div class="wrapper">
-  <div class="home-container" id="banner-big">
+  <div class="home-container">
     <div class="banner"">
       <div class="banner-content">
-        <h1 class="title-main">PoorB&B</h1>
-        <p class="catch-phrase">An experience you will never forget</p>
+        <h1 class="title-main">Find your next adventure</h1>
+        <p class="catch-phrase">A new destination awaits.</p>
         <%# <a class="btn btn-primary btn-lg">Start now</a> %>
 
         <%= button_to "View all flats", flats_path, :id => "all_flats_button",
@@ -12,6 +12,11 @@
       </div>
     </div>
   </div>
+
+  <div>
+    <%= render 'shared/carousel' %>
+  </div>
+
   <div class="home-container" id="suggestion-row">
     <div class="cards-row">
       <div>
