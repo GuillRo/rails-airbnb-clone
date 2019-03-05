@@ -9,8 +9,8 @@
 
 <p>Flat N° <%= @flat.id %> is located @ <%= @flat.address %>, costs <%= @flat.price %>, has <%= @flat.nbr_rooms %> room(s) and <%= @flat.nbr_beds %> bed(s) </p>
 
-  <%= button_to "Click here to book this flat", new_booking_url, :id => "book_flat_button",
-      :class => "btn btn-primary", :method => :get %>
+  <%= button_to "Click here to book this flat", new_flat_booking_url(@flat)), :id => "book_flat_button",
+      :class => "btflat_id: @flat.id)n btn-primary", :method => :get %>
 
 
   <%= button_to "Click here add a review", new_flat_review_url(@flat), :id => "add_review_button",
