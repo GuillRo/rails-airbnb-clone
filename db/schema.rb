@@ -15,12 +15,6 @@ ActiveRecord::Schema.define(version: 2019_03_04_152535) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "amendities", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "amenities", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -39,21 +33,12 @@ ActiveRecord::Schema.define(version: 2019_03_04_152535) do
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
-  create_table "flat_amendities", force: :cascade do |t|
-    t.bigint "flat_id"
-    t.bigint "amenditie_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["amenditie_id"], name: "index_flat_amendities_on_amenditie_id"
-    t.index ["flat_id"], name: "index_flat_amendities_on_flat_id"
-  end
-
   create_table "flat_amenities", force: :cascade do |t|
     t.bigint "flat_id"
-    t.bigint "amenitie_id"
+    t.bigint "amenity_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["amenitie_id"], name: "index_flat_amenities_on_amenitie_id"
+    t.index ["amenity_id"], name: "index_flat_amenities_on_amenity_id"
     t.index ["flat_id"], name: "index_flat_amenities_on_flat_id"
   end
 
@@ -79,8 +64,11 @@ ActiveRecord::Schema.define(version: 2019_03_04_152535) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "email", default: "", null: false
+    t.string "email"
     t.string "encrypted_password", default: "", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "adress"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -92,9 +80,7 @@ ActiveRecord::Schema.define(version: 2019_03_04_152535) do
 
   add_foreign_key "bookings", "flats"
   add_foreign_key "bookings", "users"
-  add_foreign_key "flat_amendities", "amendities", column: "amenditie_id"
-  add_foreign_key "flat_amendities", "flats"
-  add_foreign_key "flat_amenities", "amenities", column: "amenitie_id"
+  add_foreign_key "flat_amenities", "amenities"
   add_foreign_key "flat_amenities", "flats"
   add_foreign_key "reviews", "flats"
   add_foreign_key "reviews", "users"
