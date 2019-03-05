@@ -1,1 +1,8 @@
 <p>ALL THE FLATS INDEX</p>
+
+<% @flats.each do |flat| %>
+<p>TITLE = <%= flat.title %></p>
+<p>Flat N° <%= flat.id %> is located @ <%= flat.address %>, costs <%= flat.price %>, has <%= flat.nbr_rooms %> room(s) and <%= flat.nbr_beds %> bed(s) and description is <%= flat.description %></p>
+  <%= button_to "Click to view flat page", flat_path(flat), :id => "flat_button",
+      :class => "btn btn-primary", :method => :get %>
+<% end %>
