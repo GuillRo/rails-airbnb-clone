@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2019_03_05_112109) do
 
   # These are extensions that must be enabled in order to support this database
@@ -51,6 +52,7 @@ ActiveRecord::Schema.define(version: 2019_03_05_112109) do
     t.integer "nbr_rooms"
     t.integer "nbr_beds"
     t.string "photo"
+    t.string "title"
   end
 
   create_table "reviews", force: :cascade do |t|
