@@ -1,24 +1,28 @@
-<h1>Add a new flat</h1>
+<div style="margin-left: 20px;">
+  <h1>Add a new flat</h1>
 
-<%= simple_form_for(@flat) do |f| %>
- <% if @flat.errors.any? %>
-   <div class="errors-container">
-     <ul>
-       <% @flat.errors.full_messages.each do |message| %>
-         <li><%= message %></li>
-       <% end %>
-     </ul>
-   </div>
-  <% end %>
+  <%= simple_form_for(@flat) do |f| %>
+   <% if @flat.errors.any? %>
+     <div class="errors-container">
+       <ul>
+         <% @flat.errors.full_messages.each do |message| %>
+           <li><%= message %></li>
+         <% end %>
+       </ul>
+     </div>
+    <% end %>
 
-  <div class="form-group">
-      <%= f.input :description %>
-      <%= f.input :address %>
-      <%= f.input :nbr_rooms %>
-      <%= f.input :nbr_beds %>
-      <%= f.association :amenities, collection: Amenity.all.order(:name),    as: :check_boxes  %>
-      <%= f.submit "Create", class: "btn btn-primary" %>
-  </div>
+    <div class="form-group">
+        <%= f.input :description %>
+        <%= f.input :address %>
+        <%= f.input :nbr_rooms, label: "Number of rooms" %>
+        <%= f.input :nbr_beds, label: "Number of beds" %>
+        <%= f.association :amenities, as: :check_boxes, collection: Amenity.all.order(:name)  %>
+        <%= f.input :photo, label: "Add a photo" %>
+        <%= f.input :photo_cache, as: :hidden %>
+        <%= f.submit "Create", class: "btn btn-primary" %>
+    </div>
 
-  <% end %>
+    <% end %>
 
+</div>
