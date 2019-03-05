@@ -3,12 +3,14 @@
 @import "navbar";
 @import "banner";
 @import "card";
+@import "flatcard";
+@import "forms";
 
 .wrapper {
   background-color: rgb(202, 202, 202);
 }
 
-.container {
+.home-container {
   display:flex;
   padding:0;
   width:100%;

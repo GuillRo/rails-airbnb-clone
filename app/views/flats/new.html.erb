@@ -1,28 +1,36 @@
-<div style="margin-left: 20px;">
-  <h1>Add a new flat</h1>
+<div class="">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-offset-3 col-md-6">
+        <div>
+          <div class="text-center">
+            <h1>Add a new flat</h1>
+          </div>
+          <%= simple_form_for(@flat) do |f| %>
+           <% if @flat.errors.any? %>
+             <div class="errors-container">
+               <ul>
+                 <% @flat.errors.full_messages.each do |message| %>
+                   <li><%= message %></li>
+                 <% end %>
+               </ul>
+             </div>
+            <% end %>
 
-  <%= simple_form_for(@flat) do |f| %>
-   <% if @flat.errors.any? %>
-     <div class="errors-container">
-       <ul>
-         <% @flat.errors.full_messages.each do |message| %>
-           <li><%= message %></li>
-         <% end %>
-       </ul>
-     </div>
-    <% end %>
-
-    <div class="form-group">
-        <%= f.input :description %>
-        <%= f.input :address %>
-        <%= f.input :nbr_rooms, label: "Number of rooms" %>
-        <%= f.input :nbr_beds, label: "Number of beds" %>
-        <%= f.association :amenities, as: :check_boxes, collection: Amenity.all.order(:name)  %>
-        <%= f.input :photo, label: "Add a photo" %>
-        <%= f.input :photo_cache, as: :hidden %>
-        <%= f.submit "Create", class: "btn btn-primary" %>
+            <div class="form-group">
+                <%= f.input :title %>
+                <%= f.input :description %>
+                <%= f.input :address %>
+                <%= f.input :nbr_rooms, label: "Number of rooms" %>
+                <%= f.input :nbr_beds, label: "Number of beds" %>
+                <%= f.association :amenities, as: :check_boxes, collection: Amenity.all.order(:name)  %>
+                <%= f.input :photo, label: "Add a photo" %>
+                <%= f.input :photo_cache, as: :hidden %>
+                <%= f.submit "Create", class: "btn btn-primary" %>
+            </div>
+            <% end %>
+          </div>
+      </div>
     </div>
-
-    <% end %>
-
+  </div>
 </div>
