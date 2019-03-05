@@ -50,8 +50,8 @@ ActiveRecord::Schema.define(version: 2019_03_05_143412) do
     t.text "description"
     t.integer "nbr_rooms"
     t.integer "nbr_beds"
-    t.string "photo"
     t.string "title"
+    t.string "photo"
   end
 
   create_table "reviews", force: :cascade do |t|
