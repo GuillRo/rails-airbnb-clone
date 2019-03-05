@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   # Flat resources
   resources :flats, only: [:index, :new, :create, :show]
   resources :bookings, only: [:index, :new, :create]
+  resources :reviews, only: [:index, :edit, :new, :create]
 end
