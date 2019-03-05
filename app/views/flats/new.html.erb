@@ -18,6 +18,8 @@
         <%= f.input :nbr_rooms, label: "Number of rooms" %>
         <%= f.input :nbr_beds, label: "Number of beds" %>
         <%= f.association :amenities, as: :check_boxes, collection: Amenity.all.order(:name)  %>
+        <%= f.input :photo, label: "Add a photo" %>
+        <%= f.input :photo_cache, as: :hidden %>
         <%= f.submit "Create", class: "btn btn-primary" %>
     </div>
 
