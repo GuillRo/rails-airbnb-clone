@@ -1,6 +1,12 @@
-<p>SHOW A SPECIFIC FLAT</p>
+<div class="" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.4) 0%, rgba(0,36,61,0.4) 50%), url(' <%= cl_image_path @flat.photo if @flat.photo.url %> ' )">
+  <h1><%= @flat.title %></h1>
 
-<p><%= @flat.title %> ==> <%= @flat.description %></p>
+</div>
+
+
+
+<%= cl_image_tag @flat.photo, height: 300, width: 400, crop: :fill   %>
+<p> ==> <%= @flat.description %></p>
 
 
 <p>Flat N° <%= @flat.id %> is located @ <%= @flat.address %>, costs <%= @flat.price %>, has <%= @flat.nbr_rooms %> room(s) and <%= @flat.nbr_beds %> bed(s) </p>

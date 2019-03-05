@@ -1,8 +1,16 @@
-<p>ALL THE FLATS INDEX</p>
 
-<% @flats.each do |flat| %>
-<p>TITLE = <%= flat.title %></p>
-<p>Flat N° <%= flat.id %> is located @ <%= flat.address %>, costs <%= flat.price %>, has <%= flat.nbr_rooms %> room(s) and <%= flat.nbr_beds %> bed(s) and description is <%= flat.description %></p>
-  <%= button_to "Click to view flat page", flat_path(flat), :id => "flat_button",
-      :class => "btn btn-primary", :method => :get %>
-<% end %>
+<div class="text-center"><h1>All the flats</h1></div>
+<div class="flat-cards">
+  <% @flats.each do |flat| %>
+    <div class="flat-card">
+        <%= link_to flat_path(flat)  do %>
+        <div class="flat-card-body" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.4) 0%, rgba(0,36,61,0.4) 50%), url(' <%= cl_image_path flat.photo if flat.photo.url %> ' )">
+          <div class="flat-card-description">
+            <%= flat.description %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <% end %>
+</div>
+
