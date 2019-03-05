@@ -6,10 +6,13 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
+    @flat = Flat.find(params[:flat_id])
   end
 
   def create
     @review = Review.new(review_params)
+    @flat = Flat.find(params[:flat_id])
+    @review.flat_id = @flat.id
     @review.save
   end
 
