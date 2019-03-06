@@ -5,11 +5,11 @@ Amenity.destroy_all
 Flat.destroy_all
 User.destroy_all
 
-User.create(email: "john@wagon.be", first_name: "John", last_name: "Dupont", adress: "62 rue du mans")
-User.create(email: "Hector@wagon.be", first_name: "hector", last_name: "Bio", adress: "12 rue de la quète")
-User.create(email: "Helena@wagon.be", first_name: "Helena", last_name: "Macbook", adress: "18 rue de la liberté")
-User.create(email: "Josianne@wagon.be", first_name: "Josianne", last_name: "Jhonson", adress: "17 chaussée de waterloo")
-User.create(email: "Jhonny@wagon.be", first_name: "Jhonny", last_name: "Evian", adress: "15 rue du matin")
+User.create(email: "john@wagon.be", first_name: "John", last_name: "Dupont", address: "62 rue du mans")
+User.create(email: "Hector@wagon.be", first_name: "hector", last_name: "Bio", address: "12 rue de la quète")
+User.create(email: "Helena@wagon.be", first_name: "Helena", last_name: "Macbook", address: "18 rue de la liberté")
+User.create(email: "Josianne@wagon.be", first_name: "Josianne", last_name: "Jhonson", address: "17 chaussée de waterloo")
+User.create(email: "Jhonny@wagon.be", first_name: "Jhonny", last_name: "Evian", address: "15 rue du matin")
 
 # Flat.create(address: "15 avenue maison", price: 45, description: "Agreablé studio bien stitué", nbr_rooms: 3, nbr_beds: 2)
 # Flat.create(address: "1 boulevard de la woluwe", price: 70, description: "Maison de maitre avec jardin", nbr_rooms: 9, nbr_beds: 10)
