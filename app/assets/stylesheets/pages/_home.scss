@@ -1,1 +1,27 @@
 // Specific CSS for your home-page
+.wrapper {
+  background-color: white;
+}
+
+.home-container {
+  display:flex;
+  padding:0;
+  width:100%;
+  justify-content: center;
+}
+
+.cards-row{
+  display:flex;
+  flex-wrap: wrap;
+  width: 80%;
+  justify-content: center;
+}
+
+.title-main {
+  padding-bottom: 10px;
+  margin-top: 10px;
+}
+
+.catch-phrase {
+  padding-top: 50px;
+}
