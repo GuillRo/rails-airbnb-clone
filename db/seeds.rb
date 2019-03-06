@@ -11,12 +11,6 @@ user_3 = User.create(email: "Helena@wagon.be", first_name: "Helena", last_name: 
 user_4 = User.create(email: "Josianne@wagon.be", first_name: "Josianne", last_name: "Jhonson", address: "17 chaussée de waterloo")
 user_5 = User.create(email: "Jhonny@wagon.be", first_name: "Jhonny", last_name: "Evian", address: "15 rue du matin")
 
-# Flat.create(address: "15 avenue maison", price: 45, description: "Agreablé studio bien stitué", nbr_rooms: 3, nbr_beds: 2)
-# Flat.create(address: "1 boulevard de la woluwe", price: 70, description: "Maison de maitre avec jardin", nbr_rooms: 9, nbr_beds: 10)
-# Flat.create(address: "223 chaussée de charleroi", price: 41, description: "Appartement moderne", nbr_rooms: 4, nbr_beds: 4)
-# Flat.create(address: "23 rue de linkebeek", price: 39, description: "", nbr_rooms: 3, nbr_beds: 2)
-# Flat.create(address: "13 avenue du succes", price: 55, description: "Super studio privatif", nbr_rooms: 2, nbr_beds: 2)
-
 url_1 = "https://res.cloudinary.com/dux1stkfq/image/upload/v1551784212/flat_1.jpg"
 flat_1 = Flat.create(title: "Beautiful city flat", address: "Paris, France", price: 45, description: "Agréable studio bien stitué", nbr_rooms: 3, nbr_beds: 2)
 flat_1.remote_photo_url = url_1
@@ -54,6 +48,12 @@ Review.create(content: "Ideal pour un weekend en amoureux", score: 4, user_id: u
 Review.create(content: "Expérience mitigé, le quartier est très bruyant", score: 2, user_id: user_5, flat_id: flat_5)
 Review.create(content: "Génial, Je recommande fortement", score: 5, user_id: user_4, flat_id: flat_3)
 
+amen_1 = Amenity.create(name: "WiFi")
+amen_2 = Amenity.create(name: "Lave linge")
+amen_3 = Amenity.create(name: "Cuisine")
+amen_4 = Amenity.create(name: "Bureau")
+amen_5 = Amenity.create(name: "Machine à laver")
+
 FlatAmenity.create(flat_id: flat_4, amenity_id: amen_1)
 FlatAmenity.create(flat_id: flat_4, amenity_id: amen_2)
 FlatAmenity.create(flat_id: flat_4, amenity_id: amen_3)
@@ -61,8 +61,4 @@ FlatAmenity.create(flat_id: flat_3, amenity_id: amen_4)
 FlatAmenity.create(flat_id: flat_3, amenity_id: amen_5)
 
 
-amen_1 = Amenity.create(name: "WiFi")
-amen_2 = Amenity.create(name: "Lave linge")
-amen_3 = Amenity.create(name: "Cuisine")
-amen_4 = Amenity.create(name: "Bureau")
-amen_5 = Amenity.create(name: "Machine à laver")
+
