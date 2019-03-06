@@ -12,4 +12,7 @@ Rails.application.routes.draw do
     resources :reviews, only: [:index, :new,  :create]
     resources :bookings, only: [:index, :new, :create]
   end
+
+  get "bookings/error", to: "bookings#error"
+  get "reviews/error", to: "reviews#error"
 end

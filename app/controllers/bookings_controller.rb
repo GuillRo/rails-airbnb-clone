@@ -14,10 +14,11 @@ class BookingsController < ApplicationController
       @booking.flat = Flat.find(params[:flat_id])
       @booking.status = "booked"
       @booking.user = current_user
-      @booking.save
-      redirect_to flat_path(params[:flat_id])
-    else
-      redirect_to flat_path(params[:flat_id])
+      if @booking.save
+        redirect_to flat_path(params[:flat_id])
+      else
+        redirect_to bookings_error_url
+     end
     end
   end
 
