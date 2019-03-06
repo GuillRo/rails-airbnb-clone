@@ -9,16 +9,14 @@ class BookingsController < ApplicationController
   end
 
   def create
-    if user_signed_in?
-      @booking = Booking.new(booking_params)
-      @booking.flat = Flat.find(params[:flat_id])
-      @booking.status = "booked"
-      @booking.user = current_user
-      if @booking.save
-        redirect_to flat_path(params[:flat_id])
-      else
-        redirect_to bookings_error_url
-     end
+    @booking = Booking.new(booking_params)
+    @booking.flat = Flat.find(params[:flat_id])
+    @booking.status = "booked"
+    @booking.user = current_user
+    if @booking.save
+      redirect_to flat_path(params[:flat_id])
+    else
+      redirect_to bookings_error_url
     end
   end
 
