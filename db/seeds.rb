@@ -48,7 +48,7 @@ Booking.create(date_begin: Date.new(2019,4,1), date_end: Date.new(2019,4,10) , s
 Booking.create(date_begin: Date.new(2019,8,17), date_end: Date.new(2019,8,25) , status: "booked", user_id: 3, flat_id: 5)
 Booking.create(date_begin: Date.new(2019,3,10), date_end: Date.new(2019,3,14) , status: "booked", user_id: 5, flat_id: 2)
 
-Review.create(content: "Génial, super expérience", score: 4, user_id: 2, flat_id: 3)
+Review.create(content: "Génial, super expérience", score: 4, user_id: 2, flat_id:   )
 Review.create(content: "Déçu par la propreté et la qualité du matelas", score: 1, user_id: 1, flat_id: 1)
 Review.create(content: "Ideal pour un weekend en amoureux", score: 4, user_id: 5, flat_id: 4)
 Review.create(content: "Expérience mitigé, le quartier est très bruyant", score: 2, user_id: 5, flat_id: 5)

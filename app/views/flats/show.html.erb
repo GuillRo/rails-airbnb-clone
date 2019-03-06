@@ -11,6 +11,12 @@
       <p>There are <%= @flat.nbr_rooms %> room(s) and <%= @flat.nbr_beds %> bed(s). </p>
     </div>
 
+
+    <div>
+      <h3>Reviews</h3>
+      <%= render 'shared/review_card' %>
+    </div>
+
     <div class="text-center" style="margin-bottom: 30px; margin-top: 30px;">
       <%= link_to "Book flat", new_flat_booking_path(@flat),
           class: "btn btn-primary" %>
@@ -18,5 +24,6 @@
       <%= link_to "Add review", new_flat_review_path(@flat),
           class: "btn btn-primary" %>
     </div>
+
   </div>
 </div>

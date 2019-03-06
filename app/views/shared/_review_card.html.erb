@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="review-cards">
+    <% @reviews.each do |review| %>
+      <div class="review-card text-center">
+          <div class="review-card-body">
+            <div class="review-card-description">
+              <p> Score: <%= review.score %> stars</p>
+              <p> <%= review.user%> says <em>"<%= review.content %>"</em></p>
+          </div>
+        </div>
+      </div>
+      <% end %>
+  </div>
+</div>
