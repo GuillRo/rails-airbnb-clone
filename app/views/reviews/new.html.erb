@@ -1,4 +1,7 @@
-<%= form_for(@review, @) do |f| %>
+
+
+<div class="container">
+<%= form_for [@flat, @review] do |f| %>
   <div class="form-group">
     <%= f.label :score %>
     <%= f.text_field :score, class: 'form-control' %>
@@ -11,5 +14,5 @@
 
   <%= f.submit class: 'btn btn-primary' %>
 <% end %>
-
+</div>
 
