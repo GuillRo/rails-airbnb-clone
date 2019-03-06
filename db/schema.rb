@@ -50,8 +50,8 @@ ActiveRecord::Schema.define(version: 2019_03_06_122734) do
     t.text "description"
     t.integer "nbr_rooms"
     t.integer "nbr_beds"
-    t.string "photo"
     t.string "title"
+    t.string "photo"
     t.float "latitude"
     t.float "longitude"
   end

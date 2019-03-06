@@ -4,8 +4,8 @@
       <div class="review-card text-center">
           <div class="review-card-body">
             <div class="review-card-description">
-              <p> Score: <%= review.score %> stars</p>
-              <p> <%= review.user%> says <em>"<%= review.content %>"</em></p>
+              <p> Rating: <%= review.score %> stars</p>
+              <p> <%= review.user.first_name.nil? ? "Anonymous" :   review.user.first_name %> says <em>"<%= review.content %>"</em></p>
           </div>
         </div>
       </div>
