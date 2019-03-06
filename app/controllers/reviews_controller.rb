@@ -13,8 +13,11 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.user = current_user
     @review.flat = Flat.find(params[:flat_id])
-    @review.save
+    if @review.save
     redirect_to flat_path(params[:flat_id])
+    else
+      redirect_to reviews_error_url
+    end
   end
 
   private
