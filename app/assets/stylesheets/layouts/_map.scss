@@ -1,0 +1,16 @@
+.main-map-container {
+  display: flex;
+}
+
+#map {
+  flex: 0 0 550px;
+  height: 100vh;
+  position: sticky !important;
+  top: 0 !important;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+.cards-container {
+  flex-grow: 1;
+}
