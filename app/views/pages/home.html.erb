@@ -4,26 +4,19 @@
       <div class="banner-content">
         <h1 class="title-main">Find your next adventure</h1>
         <p class="catch-phrase">A new destination awaits.</p>
-        <%# <a class="btn btn-primary btn-lg">Start now</a> %>
-
-        <%= button_to "View all flats", flats_path, :id => "all_flats_button",
-      :class => "btn btn-primary", :method => :get %>
-
+        <div>
+          <%= button_to "View all flats", flats_path,class: "btn btn-primary" %>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="home-container" id="suggestion-row">
-    <div class="cards-row">
-      <div>
-        <%= render 'shared/card' %>
-      </div>
-      <div>
-        <%= render 'shared/card' %>
-      </div>
-      <div>
-        <%= render 'shared/card' %>
-      </div>
-    </div>
+
+
+  <div class="carousel-wrapper">
+    <h3>Trip suggestions</h3>
+    <%= render 'shared/carousel' %>
   </div>
+
+
 </div>
