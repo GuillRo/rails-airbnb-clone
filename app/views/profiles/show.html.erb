@@ -1,5 +1,19 @@
 <div class="container">
   <div style="margin: 100px;">
-    <h1>Holy shit you are ugly</h1>
+    <div>
+      <h1>Holy shit you are ugly</h1>
+    </div>
+    <div>
+      <h1>My previous bookings</h1>
+      <%= render 'shared/booking_card', bookings: @past_bookings %>
+    </div>
+    <div>
+      <h1>My planned bookings</h1>
+      <%= render 'shared/booking_card', bookings: @booked %>
+    </div>
+    <div>
+      <h1>My reviews</h1>
+      <%= render 'shared/review_card', reviews: @reviews %>
+    </div>
   </div>
 </div>

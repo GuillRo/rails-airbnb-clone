@@ -11,7 +11,7 @@
     </div>
     <div>
       <h3>Reviews</h3>
-      <%= render 'shared/review_card' %>
+      <%= render 'shared/review_card', reviews: @reviews %>
     </div>
     <%if user_signed_in?%>
       <div class="text-center" style="margin-bottom: 30px; margin-top: 30px;">

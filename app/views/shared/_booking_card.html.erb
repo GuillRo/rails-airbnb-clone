@@ -1,11 +1,11 @@
 <div class="row">
   <div class="review-cards">
-    <% reviews.each do |review| %>
+    <% bookings.each do |booking| %>
       <div class="review-card text-center">
           <div class="review-card-body">
             <div class="review-card-description">
-              <p> Rating: <%= review.score %> stars</p>
-              <p> <%= review.user.first_name.nil? ? "Anonymous" :   review.user.first_name %> says <em>"<%= review.content %>"</em></p>
+              <p> Beginning: <%= booking.date_begin %> </p>
+              <p> End: <%= booking.date_end %> </p>
           </div>
         </div>
       </div>
