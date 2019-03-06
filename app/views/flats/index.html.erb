@@ -1,5 +1,15 @@
-
 <div class="text-center" style="margin-top: 100px;"><h1>All the flats</h1></div>
+
+<!-- BACK-END (ONLY) OF GEOMAP CODE -->
+<div
+  id="map"
+  style="width: 100%;
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+<!-- END -->
+
+
 <div class="flat-cards">
   <% @flats.each do |flat| %>
     <div class="flat-card text-center">
