@@ -39,6 +39,7 @@ flat_5.save
 Booking.create!(date_begin: Date.new(2019,2,1), date_end: Date.new(2019,2,3) , status: "booked", user: user_1, flat: flat_3)
 Booking.create!(date_begin: Date.new(2019,3,5), date_end: Date.new(2019,3,7) , status: "booked", user: user_2, flat: flat_4)
 Booking.create!(date_begin: Date.new(2019,4,1), date_end: Date.new(2019,4,10) , status: "booked", user: user_3, flat: flat_1)
+Booking.create!(date_begin: Date.new(2019,5,2), date_end: Date.new(2019,5,6) , status: "booked", user: user_3, flat: flat_1)
 Booking.create!(date_begin: Date.new(2019,8,17), date_end: Date.new(2019,8,25) , status: "booked", user: user_4, flat: flat_5)
 Booking.create!(date_begin: Date.new(2019,3,10), date_end: Date.new(2019,3,14) , status: "booked", user: user_5, flat: flat_2)
 
