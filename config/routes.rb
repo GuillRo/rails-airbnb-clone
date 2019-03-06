@@ -15,4 +15,7 @@ Rails.application.routes.draw do
 
   get "bookings/error", to: "bookings#error"
   get "reviews/error", to: "reviews#error"
+  # devise_for :users
+  # resources :users, except: [:show]
+  # get 'user/show/:id', to: 'users#show', as: 'profil'
 end
