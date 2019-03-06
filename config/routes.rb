@@ -10,6 +10,6 @@ Rails.application.routes.draw do
 
   resources :flats, only: [:index, :new, :create, :show, :destroy] do
     resources :reviews, only: [:index, :new,  :create]
+    resources :bookings, only: [:index, :new, :create]
   end
-  resources :bookings, only: [:index, :new, :create]
 end

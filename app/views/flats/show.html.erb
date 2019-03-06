@@ -12,10 +12,10 @@
     </div>
 
     <div class="text-center" style="margin-bottom: 30px; margin-top: 30px;">
-      <%= link_to "Book flat", new_booking_url,
+      <%= link_to "Book flat", new_flat_booking_path(@flat),
           class: "btn btn-primary" %>
 
-      <%= link_to "Add review", new_flat_review_url(@flat),
+      <%= link_to "Add review", new_flat_review_path(@flat),
           class: "btn btn-primary" %>
     </div>
   </div>

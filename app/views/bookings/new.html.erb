@@ -1,5 +1,5 @@
 <div class="container">
-  <%= form_for(@booking) do |f| %>
+  <%= form_for [@flat, @booking] do |f| %>
     <div class="form-group">
       <%= f.label :date_begin %>
       <%= f.text_field :date_begin, class: 'form-control' %>

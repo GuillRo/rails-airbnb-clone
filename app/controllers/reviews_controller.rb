@@ -5,12 +5,16 @@ class ReviewsController < ApplicationController
   end
 
   def new
+    @flat = Flat.find(params[:flat_id])
     @review = Review.new
   end
 
   def create
     @review = Review.new(review_params)
+    @review.user = current_user
+    @review.flat = Flat.find(params[:flat_id])
     @review.save
+    redirect_to flat_path(params[:flat_id])
   end
 
   private
