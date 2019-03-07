@@ -6,9 +6,10 @@ class BookingsController < ApplicationController
   def new
     @flat = Flat.find(params[:flat_id])
     @booking = Booking.new
+    @message = params[:message]
   end
 
-def create
+  def create
     @booking = Booking.new(booking_params)
     if check_available?(Flat.find(params[:flat_id]), @booking)
       @booking.flat = Flat.find(params[:flat_id])
@@ -20,14 +21,22 @@ def create
         redirect_to bookings_error_url
       end
     else
-      redirect_to bookings_error_url
+        # @message = "booked"
+        # redirect_to bookings_error_url, errormessage: "Already booked"
+        # redirect_to '/flats/params[:flat_id]/bookings/new?#{@message}'
+        redirect_to new_flat_booking_url(message: "Sorry. Booked already.")
     end
   end
+
+  def booked
+    @ERRORMESSAGE = params[:message]
+  end
+
 
   private
 
   def booking_params
-    params.require(:booking).permit(:date_begin, :date_end)
+    params.require(:booking).permit(:date_begin, :date_end, :flat_id)
   end
 
   def check_available?(flat, new_booking)
