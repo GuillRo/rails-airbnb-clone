@@ -36,3 +36,4 @@ gem 'devise'
 gem 'geocoder'
 gem 'simple_calendar'
 gem "algoliasearch-rails"
+

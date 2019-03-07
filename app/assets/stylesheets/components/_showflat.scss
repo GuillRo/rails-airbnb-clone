@@ -1,9 +1,17 @@
+.container-background  {
+  margin-top: 100px;
+  padding:35px;
+  background-color: #65c6c4;
+  border-radius: 4px;
+}
+
 .flat-header {
-  margin-top: 30px;
   background-size: cover;
   position: relative;
+
   height: 300px;
-  width: 100%;
+
+  border-radius: 4px;
   h1 {
     color: white;
     position: absolute;
@@ -12,12 +20,7 @@
   }
 }
 
-
-.container-background  {
-  margin-top: 100px;
-  background-color: white;
-}
-
 .flat-description {
   margin-top: 40px;
+
 }
