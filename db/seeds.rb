@@ -3,8 +3,9 @@ Review.destroy_all
 FlatAmenity.destroy_all
 Amenity.destroy_all
 Flat.destroy_all
-User.destroy_all
 Profile.destroy_all
+
+User.destroy_all
 
 user_1 = User.create!(password: "123123", email: "john@wagon.be", first_name: "John", last_name: "Dupont", address: "62 rue du mans")
 user_2 = User.create!(password: "123123", email: "Hector@wagon.be", first_name: "hector", last_name: "Bio", address: "12 rue de la quète")
