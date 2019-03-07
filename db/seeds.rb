@@ -12,7 +12,7 @@ user_3 = User.create!(password: "123123", email: "Helena@wagon.be", first_name: 
 user_4 = User.create!(password: "123123", email: "Josianne@wagon.be", first_name: "Josianne", last_name: "Jhonson", address: "17 chaussée de waterloo")
 user_5 = User.create!(password: "123123", email: "Jhonny@wagon.be", first_name: "Jhonny", last_name: "Evian", address: "15 rue du matin")
 
-user_1.create_profile(presentation: "Hi, I'm John. I love traveling!")
+user_1.create_profile!(presentation: "Hi, I'm John. I love traveling!")
 
 url_1 = "https://res.cloudinary.com/dux1stkfq/image/upload/v1551784212/flat_1.jpg"
 flat_1 = Flat.create!(title: "Beautiful city flat", address: "Paris, France", price: 45, description: "Agréable studio bien stitué", nbr_rooms: 3, nbr_beds: 2)
