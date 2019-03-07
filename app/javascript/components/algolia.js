@@ -5,7 +5,6 @@
 //   </div>
 //   <input type="submit">
 // </form>`
-
 const algoliaSearch = () => {
   console.log("loaded")
   document.addEventListener('DOMContentLoaded', function () {
@@ -19,13 +18,29 @@ const algoliaSearch = () => {
     index.search(event.target.value, { hitsPerPage: 10, page: 0 })
       .then(function searchDone(content) {
         console.log(content)
+        jqtest();
         // document.getElementById('searchbar').innerHTML = contentHTML
-        
+
       })
       .catch(function searchFailure(err) {
         console.error(err);
       });
   }
+}
+
+
+const jqtest = () => {
+  console.log('kikou');
+
+  var availableTags = [
+    "ActionScript", "AppleScript", "Asp", "BASIC", "C", "C++", "Clojure",
+    "COBOL", "ColdFusion", "Erlang", "Fortran", "Groovy", "Haskell", "Java",
+    "JavaScript", "Lisp", "Perl", "PHP", "Python", "Ruby", "Scala", "Scheme"
+  ];
+
+  $("#tags").autocomplete({
+    source: availableTags
+  });
 }
 
 
