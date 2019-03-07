@@ -10,7 +10,6 @@
       <p>There are <%= @flat.nbr_rooms %> room(s) and <%= @flat.nbr_beds %> bed(s). </p>
     </div>
     <div>
-      <h3>Reviews</h3>
       <%= render 'shared/review_card', reviews: @reviews %>
     </div>
     <%if user_signed_in?%>

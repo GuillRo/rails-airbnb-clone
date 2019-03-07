@@ -2,24 +2,31 @@
 .review-cards {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
+  background-color: white;
+  border: 1px solid #ccc!important;
+  border-radius: 4px;
+  padding-bottom: 20px;
+  margin: 30px;
 }
 .review-cards .review-card{
   flex: 1 1 auto;
-  width: 30%;
   box-sizing: border-box;
-  margin: 15px;
+  background-color: $light-gray;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 5px;
   border: 1px solid #ccc!important;
-  border-radius: 10px;
+  border-radius: 4px;
 }
 
 .review-card-body {
-  height: 200px;
-  border: blue;
+  height: 100px;
   color: black;
   position: relative;
   display: flex;
   justify-content: center;
-  padding: 10px;
+  padding: 5px;
 
 }
 
@@ -36,8 +43,8 @@
 .review-card-description {
   padding-top: 5px;
   position: absolute;
-  bottom: 25px;
-  font-size: 25px;
+  bottom: 15px;
+  font-size: 15px;
 }
 
 .review-card-user {
