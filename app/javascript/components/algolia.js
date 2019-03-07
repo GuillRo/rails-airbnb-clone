@@ -18,7 +18,6 @@ const algoliaSearch = () => {
     index.search(event.target.value, { hitsPerPage: 10, page: 0 })
       .then(function searchDone(content) {
         console.log(content)
-        jqtest();
         // document.getElementById('searchbar').innerHTML = contentHTML
 
       })
@@ -26,21 +25,6 @@ const algoliaSearch = () => {
         console.error(err);
       });
   }
-}
-
-
-const jqtest = () => {
-  console.log('kikou');
-
-  var availableTags = [
-    "ActionScript", "AppleScript", "Asp", "BASIC", "C", "C++", "Clojure",
-    "COBOL", "ColdFusion", "Erlang", "Fortran", "Groovy", "Haskell", "Java",
-    "JavaScript", "Lisp", "Perl", "PHP", "Python", "Ruby", "Scala", "Scheme"
-  ];
-
-  $("#tags").autocomplete({
-    source: availableTags
-  });
 }
 
 
