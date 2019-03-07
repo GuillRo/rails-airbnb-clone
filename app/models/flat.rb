@@ -1,4 +1,12 @@
 class Flat < ApplicationRecord
+  include AlgoliaSearch
+
+  algoliasearch do
+    attribute :address, :title, :description
+    searchableAttributes ['address', 'title', 'unordered(description)']
+    # customRanking ['desc(likes_count)']
+  end
+
   has_many :reviews
   has_many :bookings
   has_many :flat_amenities
