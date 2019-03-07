@@ -96,9 +96,6 @@ GEM
     httpclient (2.8.3)
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
-    icalendar (2.5.3)
-      ice_cube (~> 0.16)
-    ice_cube (0.16.3)
     jbuilder (2.8.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
@@ -242,7 +239,6 @@ DEPENDENCIES
   dotenv-rails
   font-awesome-sass (~> 5.5.0)
   geocoder
-  icalendar
   jbuilder (~> 2.0)
   listen (~> 3.0.5)
   pg (~> 0.21)
