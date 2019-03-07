@@ -1,0 +1,21 @@
+<div class="container" style="margin-top:10px !important;">
+  <div class="profile-container-background"></div>
+  <%= simple_form_for(@profile) do |p| %>
+    <% if @profile.errors.any? %>
+      <div class="errors-container">
+        <ul>
+          <% @profile.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= p.input :presentation, label: "Bio" %>
+      <%= p.input :photo, label: "Profile photo" %>
+      <%= p.input :photo_cache, as: :hidden %>
+      <%= p.submit "Submit", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>

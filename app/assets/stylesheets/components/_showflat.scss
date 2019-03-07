@@ -8,19 +8,31 @@
 .flat-header {
   background-size: cover;
   position: relative;
-
   height: 300px;
-
   border-radius: 4px;
   h1 {
     color: white;
     position: absolute;
-    bottom: 50px;
-    left: 50px;
+    bottom:110px;
+    left: 100px;
   }
+}
+
+.booking-button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
 }
 
 .flat-description {
   margin-top: 40px;
 
+}
+
+.review-show-container {
+  background-color: white;
+  border: 1px solid #ccc!important;
+  border-radius: 4px;
+  padding-bottom: 20px;
+  margin: 30px;
 }

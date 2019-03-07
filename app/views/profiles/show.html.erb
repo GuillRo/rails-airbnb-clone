@@ -1,19 +1,33 @@
 <div class="container">
-  <div style="margin: 100px;">
-    <div>
-      <h1>Holy shit you are ugly</h1>
+    <div class="profile-small-container text-center">
+      <div>
+        <h1>My profile</h1>
+      </div>
+        <div>
+          <%= cl_image_tag @profile&.photo&.url, class: 'avatar-large'  %>
+        </div>
+      <div>
+        <p><strong>Bio:</strong> <%= @profile.presentation %></p>
+      </div>
+      <div class="profile-button">
+        <%= link_to "Edit", edit_profile_path(@profile),
+          class: "btn btn-info btn-sm" %>
+      </div>
     </div>
-    <div>
-      <h1>My previous bookings</h1>
-      <%= render 'shared/booking_card', bookings: @past_bookings %>
-    </div>
-    <div>
-      <h1>My planned bookings</h1>
-      <%= render 'shared/booking_card', bookings: @booked %>
-    </div>
-    <div>
-      <h1>My reviews</h1>
-      <%= render 'shared/review_card', reviews: @reviews %>
-    </div>
+
+      <div >
+        <div class="profile-small-container">
+          <h3>My previous bookings</h3>
+          <%= render 'shared/booking_card', bookings: @past_bookings %>
+        </div>
+        <div class="profile-small-container">
+          <h3>My planned bookings</h3>
+          <%= render 'shared/booking_card', bookings: @booked %>
+        </div>
+        <div class="profile-small-container">
+          <h3>My reviews</h3>
+          <%= render 'shared/review_card', reviews: @reviews %>
+        </div>
+      </div>
   </div>
 </div>
