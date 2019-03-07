@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Booked Days</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Start time</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @booked_days.each do |booked_day| %>
+      <tr>
+        <td><%= booked_day.name %></td>
+        <td><%= booked_day.start_time %></td>
+        <td><%= link_to 'Show', booked_day %></td>
+        <td><%= link_to 'Edit', edit_booked_day_path(booked_day) %></td>
+        <td><%= link_to 'Destroy', booked_day, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Booked Day', new_booked_day_path %>
