@@ -2,12 +2,18 @@
   <div style="margin:100px;">
     <%= form_for [@flat, @booking] do |f| %>
       <div class="form-group">
-        <%= f.label :date_begin %>
-        <%= f.text_field :date_begin, class: 'form-control' %>
+        <%= f.label :date_begin_id %>
+        <div class="">
+        <%= date_field(:date_begin, :date_begin_id, min: Date.today) %>
+        </div>
       </div>
+
+
       <div class="form-group">
-        <%= f.label :date_end %>
-        <%= f.text_field :date_end, class: 'form-control' %>
+        <%= f.label :date_end_id %>
+        <div class="">
+        <%= date_field(:date_end, :date_end_id, min: Date.today) %>
+        </div>
       </div>
       <%= f.submit class: 'btn btn-primary' %>
     <% end %>
