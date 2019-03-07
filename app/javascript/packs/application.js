@@ -10,6 +10,6 @@ import { initMapbox } from '../plugins/init_mapbox';
 
 initMapbox();
 
-import { initCalendar } from '../components/calendar';
 
-initCalendar();
+
+
