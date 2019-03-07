@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :bookings, only: [:index, :new, :create]
   end
 
-  resources :profiles, only: [:show]
+  resources :profiles, only: [:show, :update, :create, :new, :edit]
   get "bookings/error", to: "bookings#error"
   get "reviews/error", to: "reviews#error"
   # devise_for :users
