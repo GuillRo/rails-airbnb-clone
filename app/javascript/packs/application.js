@@ -11,5 +11,5 @@ import { initMapbox } from '../plugins/init_mapbox';
 initMapbox();
 
 
-
-
+import { algoliaSearch } from '../components/algolia';
+algoliaSearch();

@@ -3,7 +3,11 @@ class FlatsController < ApplicationController
 
   def index
     # CMT - @flats = Flat.all
-    @flats = Flat.where.not(latitude: nil, longitude: nil)
+    if params[:query].present?
+      @flats = Flat.algolia_search(params[:query])
+    else
+      @flats = Flat.where.not(latitude: nil, longitude: nil)
+    end
     @markers = @flats.map do |flat|
       {
         lng: flat.longitude,

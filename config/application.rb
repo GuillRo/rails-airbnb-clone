@@ -20,5 +20,9 @@ module RailsAirbnbClone
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+
+    # Rails.application.eager_load!
+    # algolia_models = ActiveRecord::Base.descendants.select{ |model| model.respond_to?(:reindex) }
+    # algolia_models.each(&:reindex)
   end
 end
