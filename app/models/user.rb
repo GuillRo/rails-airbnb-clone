@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :reviews
   has_many :bookings
-  has_one :profile
+  has_one :profile, dependent: :destroy
 
   after_create :create_profile
 
