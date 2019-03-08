@@ -4,14 +4,19 @@
       <div class="banner-content">
         <h1 class="title-main">Find your next adventure</h1>
         <p class="catch-phrase">A new destination awaits.</p>
-        <div class="bloodhound">
-          <%#= link_to "View all flats", flats_path,class: "btn btn-primary" %>
-
+        <div>
+          <script src="https://cdn.jsdelivr.net/npm/places.js@1.16.1"></script>
           <%= form_tag flats_path, method: :get do %>
-            <%= text_field_tag :query, params[:query], class: "form-control js-searchbar", id:"tags", placeholder: "Find a flat", autocomplete:"off" %>
+            <%= text_field_tag :query, params[:query], class: "form-control js-searchbar", placeholder: "Find a flat", autocomplete:"off" %>
           <% end %>
-          
-        
+          <script src="https://cdn.jsdelivr.net/npm/places.js@1.16.1"></script>
+          <script>
+            var placesAutocomplete = places({
+              appId: 'plPXFELQHKO7',
+              apiKey: 'f7133196424bc5de90408baab2aff571',
+              container: document.querySelector('.js-searchbar')
+            });
+          </script>
         </div>
       </div>
     </div>
