@@ -8,7 +8,7 @@ import {loadDynamicBannerText} from "../components/banner";
 initUpdateNavbarOnScroll();
 initUpdateNavbarHomeOnScroll();
 
-if( document.getElementById('#title-main')) {
+if( document.getElementById('title-main')) {
   loadDynamicBannerText();
 }
 initMapbox();
