@@ -1,5 +1,6 @@
 const initUpdateNavbarOnScroll = () => {
   const navbar = document.querySelector('.navbar-wagon');
+
   if (navbar) {
     //console.log("found .navbar-wagon class");
     window.addEventListener('scroll', () => {
@@ -13,7 +14,12 @@ const initUpdateNavbarOnScroll = () => {
 
       }
     });
+
+
   }
+
+
+
 };
 
 console.log("hello from navbar.js");
