@@ -11,7 +11,7 @@
 }
 
 // maximum number of slides the carousel can have
-$number-of-slides: 10;
+$number-of-slides: 6;
 
 .carousel {
   min-width: 900px;
@@ -104,7 +104,7 @@ $number-of-slides: 10;
 }
 
 // desktop can have up to 5 items per slide
-@for $i from 1 through 5 {
+@for $i from 1 through 3 {
   .carousel__item--desktop-in-#{$i} {
     width: #{100% / $i};
   }
