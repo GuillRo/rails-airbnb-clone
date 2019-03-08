@@ -3,26 +3,22 @@
     <div class="banner"">
       <div class="banner-content homepage-banner-container">
         <h1 class="title-main">Find your next adventure</h1>
-
         <p class="catch-phrase">A new destination awaits.</p>
         <div>
           <script src="https://cdn.jsdelivr.net/npm/places.js@1.16.1"></script>
           <%= form_tag flats_path, method: :get do %>
-          <div style="display: flex; align-content: space-around;">
-            <%= text_field_tag :query, params[:query], class: "form-control js-searchbar homepage-search", placeholder: "Enter a city", autocomplete:"off" %>
+            <div style="display: flex; align-content: space-around;">
+              <%= text_field_tag :query, params[:query], class: "form-control js-searchbar homepage-search", placeholder: "Enter a city", autocomplete:"off" %>
             </div>
           <% end %>
-
-          <script src="https://cdn.jsdelivr.net/npm/places.js@1.16.1"></script>
           <script>
             var placesAutocomplete = places({
               appId: 'plPXFELQHKO7',
               apiKey: 'f7133196424bc5de90408baab2aff571',
-              container: document.querySelector('.js-searchbar')
+              container: document.querySelector('.js-searchbar'),
+               language: 'fr'
             });
-           
           </script>
-
         </div>
       </div>
     </div>
