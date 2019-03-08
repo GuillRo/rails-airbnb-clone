@@ -3,9 +3,8 @@
     <% bookings.each do |booking| %>
       <div class="review-card text-center">
           <div class="review-card-body">
-            <div class="review-card-description">
-              <p> Beginning: <%= booking.date_begin %> </p>
-              <p> End: <%= booking.date_end %> </p>
+            <div id="booking-card-description">
+              <p>Your trip starts on <strong><%= booking.date_begin %></strong> and ends on <strong><%= booking.date_end %>.</strong></p>
           </div>
         </div>
       </div>

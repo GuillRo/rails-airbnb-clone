@@ -35,3 +35,4 @@ end
 gem 'devise'
 gem 'geocoder'
 gem "algoliasearch-rails"
+gem 'bootstrap-datepicker-rails'

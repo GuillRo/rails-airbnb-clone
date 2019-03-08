@@ -10,33 +10,23 @@ class BookingsController < ApplicationController
   end
 
   def create
-
     @booking = Booking.new(booking_params)
-
     if check_correctdate?(@booking)
-
-
-          if check_available?(Flat.find(params[:flat_id]), @booking)
-            @booking.flat = Flat.find(params[:flat_id])
-            @booking.status = "booked"
-            @booking.user = current_user
-            if @booking.save
-              redirect_to flat_path(params[:flat_id])
-            else
-              redirect_to bookings_error_url
-            end
+      if check_available?(Flat.find(params[:flat_id]), @booking)
+        @booking.flat = Flat.find(params[:flat_id])
+        @booking.status = "booked"
+        @booking.user = current_user
+          if @booking.save
+            redirect_to flat_path(params[:flat_id])
           else
-              # @message = "booked"
-              # redirect_to bookings_error_url, errormessage: "Already booked"
-              # redirect_to '/flats/params[:flat_id]/bookings/new?#{@message}'
-              redirect_to new_flat_booking_url(message: "Sorry. Booked already.")
+            redirect_to bookings_error_url
           end
-
       else
-
-            redirect_to new_flat_booking_url(message: "Sorry. There is something wrong in the dates.")
+      redirect_to new_flat_booking_url(message: "Sorry. Booked already.")
       end
-
+    else
+      redirect_to new_flat_booking_url(message: "Sorry. There is something wrong in the dates.")
+    end
   end
 
   private
@@ -56,6 +46,7 @@ class BookingsController < ApplicationController
   end
 
   def check_correctdate?(booking)
+    return false if booking.date_begin.nil? || booking.date_end.nil?
     return false unless booking.date_begin <= booking.date_end
     return false unless booking.date_end <= Date.today + 365
     return true
