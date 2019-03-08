@@ -10,6 +10,7 @@
   position: relative;
   height: 300px;
   border-radius: 4px;
+  margin: 30px;
   h1 {
     color: white;
     position: absolute;
@@ -26,10 +27,12 @@
 
 .flat-description {
   margin-top: 40px;
+  margin-left: 30px;
+  margin-right: 30px;
 
 }
 
-.review-show-container {
+.show-container {
   background-color: white;
   border: 1px solid #ccc!important;
   border-radius: 4px;

@@ -2,9 +2,10 @@
   <div class="home-container">
     <div class="banner"">
       <div class="banner-content homepage-banner-container">
-        <h1 class="title-main">Find your next adventure</h1>
 
-        <p class="catch-phrase">A new destination awaits.</p>
+        <div class="title-main">
+        <div id="title-main"></div>
+        </div>
         <div>
           <script src="https://cdn.jsdelivr.net/npm/places.js@1.16.1"></script>
           <%= form_tag flats_path, method: :get do %>
@@ -20,7 +21,7 @@
               apiKey: 'f7133196424bc5de90408baab2aff571',
               container: document.querySelector('.js-searchbar')
             });
-           
+
           </script>
 
         </div>
@@ -28,7 +29,8 @@
     </div>
   </div>
   <div class="carousel-wrapper">
-    <h3>Trip suggestions</h3>
+    <h3>Unique homes for your next trip</h3>
+    <p>Book one of these spots and escape the ordinary</p>
     <%= render 'shared/carousel' %>
   </div>
 </div>

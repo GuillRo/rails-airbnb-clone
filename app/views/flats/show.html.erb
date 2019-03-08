@@ -5,17 +5,19 @@
       <%if user_signed_in?%>
       <div class="booking-button">
         <%= link_to "Book flat", new_flat_booking_path(@flat),
-          class: "btn btn-primary btn-lg" %>
+          class: "btn btn-info btn-lg" %>
       </div>
     <%end%>
     </div>
-    <div class="flat-description">
-      <p><strong>Description:</strong> <%= @flat.description %></p>
-      <p><strong>The address is:</strong> <%= @flat.address %>. </p>
-      <p><strong>Price per night:</strong> <%= @flat.price %>€.</p>
-      <p>There are <%= @flat.nbr_rooms %> room(s) and <%= @flat.nbr_beds %> bed(s). </p>
+    <div class="show-container">
+      <div class="flat-description">
+        <p><strong>Description:</strong> <%= @flat.description %></p>
+        <p><strong>Location:</strong> <%= @flat.address %>. </p>
+        <p><strong>Price:</strong> <%= @flat.price %>€ per night.</p>
+        <p>There are <%= @flat.nbr_rooms %> room(s) and <%= @flat.nbr_beds %> bed(s). </p>
+      </div>
     </div>
-    <div class="review-show-container">
+    <div class="show-container">
       <div class="text-center">
         <h3>Recent reviews</h3>
         <p> <em>Average rating:</em> <%= "★" * @flat.average %><%= "☆" * (5 - @flat.average ) %></p>
@@ -24,7 +26,7 @@
     <%if user_signed_in?%>
       <div class="text-center" style="margin-bottom: 30px; margin-top: 30px;">
         <%= link_to "Add review", new_flat_review_path(@flat),
-          class: "btn btn-primary" %>
+          class: "btn btn-info" %>
       </div>
     <%end%>
     </div>
