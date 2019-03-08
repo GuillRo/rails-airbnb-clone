@@ -7,7 +7,7 @@ import {loadDynamicBannerText} from "../components/banner";
 
 initUpdateNavbarOnScroll();
 initUpdateNavbarHomeOnScroll();
-loadDynamicBannerText()
+loadDynamicBannerText();
 initMapbox();
 
 

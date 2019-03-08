@@ -1,7 +1,7 @@
 const initUpdateNavbarHomeOnScroll = () => {
 
   const navbarhome = document.querySelector('.navbar-wagon-home');
-  if (navbar) {
+  if (navbarhome) {
     //console.log("found .navbar-wagon class");
     window.addEventListener('scroll', () => {
       if (window.scrollY >= 80) {
