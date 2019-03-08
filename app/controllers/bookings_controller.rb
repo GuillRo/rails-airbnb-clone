@@ -39,11 +39,6 @@ class BookingsController < ApplicationController
 
   end
 
-  def booked
-    @ERRORMESSAGE = params[:message]
-  end
-
-
   private
 
   def booking_params

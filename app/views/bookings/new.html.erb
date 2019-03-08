@@ -19,5 +19,49 @@
     <% end %>
 
     <div class="showstatus"><p><%= @message if @message %></p></div>
+
+    <div id="caleandar">
+
+    </div>
+
+
+<%
+
+def valid_date?(dt)
+  begin
+    Date.parse(dt)
+    true
+  rescue => e
+    false
+  end
+end
+
+
+def generate_date_range(first, last)
+  first, last = "", first unless last
+  if last.nil? || last.empty?
+    last = (Time.now - 1.day).in_time_zone('Brussels').strftime("%Y-%m-%d")
+  end
+  if first.empty?
+    first = Time.strptime(last, "%Y-%m-%d").in_time_zone('Brussels').beginning_of_month.strftime("%Y-%m-%d")
+  end
+  (first..last).select { |d|  valid_date?(d) }
+end
+
+%>
+
+<script> let events = [] </script>
+  <%  Booking.where(flat_id: @flat).each do |booking| %>
+    <% range = generate_date_range(booking.date_begin.to_s, booking.date_end.to_s) %>
+    <% range.each do |date| %>
+      <% array = date.split("-") %>
+      <script>
+        events.push({'Date': new Date(<%= array[0] %>, <%= array[1].to_i - 1 %>, <%= array[2] %>), 'Title': 'Booked.'})
+      </script>
+     <% end %>
+  <%  end %>
+<script>
+
+</script>
   </div>
 </div>

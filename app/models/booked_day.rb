@@ -1,2 +1,0 @@
-class BookedDay < ApplicationRecord
-end
