@@ -1,29 +1,5 @@
-<div class="container">
-  <div style="margin:100px;">
-    <%= form_for([@flat, @booking]) do |f| %>
-      <div class="form-group">
-        <%= f.label :date_begin %>
-        <div class="">
-        <%= f.date_field(:date_begin, min: Date.today) %>
-        </div>
-      </div>
 
-
-      <div class="form-group">
-        <%= f.label :date_end %>
-        <div class="">
-        <%= f.date_field(:date_end, min: Date.today) %>
-        </div>
-      </div>
-      <%= f.submit class: 'btn btn-primary' %>
-    <% end %>
-
-    <div class="showstatus"><p><%= @message if @message %></p></div>
-
-    <div id="caleandar">
-
-    </div>
-
+<!-- RB Controllers -->
 
 <%
 
@@ -50,18 +26,71 @@ end
 
 %>
 
-<script> let events = [] </script>
+
+<!-- Model prep -->
+
+<script>
+let disablearray = [];
+let bookedarray = [];
+</script>
+
   <%  Booking.where(flat_id: @flat).each do |booking| %>
     <% range = generate_date_range(booking.date_begin.to_s, booking.date_end.to_s) %>
     <% range.each do |date| %>
       <% array = date.split("-") %>
+      <% array[0] = array[0].to_i %>
+      <% array[1] = array[1].to_i %>
+      <% array[2] = array[2].to_i %>
+      <% string = array.join("-") %>
       <script>
-        events.push({'Date': new Date(<%= array[0] %>, <%= array[1].to_i - 1 %>, <%= array[2] %>), 'Title': 'Booked.'})
+        disablearray.push(new Date(<%= array[0].to_i %>, <%= array[1].to_i - 1 %>, <%= array[2].to_i %>));
+        bookedarray.push(Date.parse('<%= string %>'));
       </script>
      <% end %>
-  <%  end %>
+    <% end %>
 <script>
 
 </script>
   </div>
 </div>
+
+
+<!-- View -->
+
+
+<div class="container">
+  <div style="margin:100px;">
+  <div class="form-wrapper">
+  <h1>Book your flat</h1>
+  <%= simple_form_for([@flat, @booking]) do |t| %>
+  <%= t.input :date_begin, as: :string, input_html: { class: "datepicker" } %>
+  <%= t.input :date_end, as: :string, input_html: { class: "datepicker" } %>
+  <%= t.submit "Create booking", class: "btn btn-primary" %>
+  <% end %>
+  </div>
+  <div class="showstatus"><p style="color:orange; font-weight:bold"><%= @message if @message %></p></div>
+  </div>
+</div>
+
+
+<!-- JS Controllers -->
+
+<script>
+  flatpickr('.datepicker', {
+  disable: disablearray,
+  altInput: true,
+  altFormat: "j F, Y",
+  dateFormat: "d-m-Y",
+  minDate: "today",
+  maxDate: new Date().fp_incr(365),
+
+      onDayCreate: function(dObj, dStr, fp, dayElem) {
+         // Checking to see if the current day object is in our array
+         // The `+` is just a shortcut for parsing the date
+          if (bookedarray.indexOf(+dayElem.dateObj) !== -1) {
+            dayElem.className += " booked-day";
+          }
+      },
+   weekNumbers: true // 1 year from now
+  });
+</script>
