@@ -5,7 +5,19 @@
 /* The algolia-places input */
 .ap-input, .ap-hint {
 }
+#new_flat {
+  .ap-input, .ap-hint {
+    box-sizing: content-box !important;
+          
+      @extend .form-control
+  }
+  .algolia-places{  
 
+    width: 100%;
+
+  }
+
+}
 /* The style of the svg icons when the input is on hover */
 .ap-input:hover ~ .ap-input-icon svg,
 .ap-input:focus ~ .ap-input-icon svg,
