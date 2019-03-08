@@ -14,7 +14,8 @@
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   </head>
   <body>
-    <%= render 'shared/navbar' %>
+    <%= render 'shared/navbar' unless current_page?(root_path) %>
+    <%= render 'shared/navbarhome' if current_page?(root_path) %>
     <%= yield %>
     <%= render 'shared/footer' %>
     <%= javascript_include_tag 'application' %>

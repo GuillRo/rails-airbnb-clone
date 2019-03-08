@@ -1,0 +1,15 @@
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size:24px;
+  }
+
+  .container-margin{
+    margin:10px;
+  }
+
+  .footer {
+  padding: 0px 20px;
+  width:90%;
+  }
+
+}
