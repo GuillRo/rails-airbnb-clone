@@ -4,7 +4,9 @@ class FlatsController < ApplicationController
   def index
     # CMT - @flats = Flat.all
     if params[:query].present?
-      @flats = Flat.algolia_search(params[:query])
+      # @flats = Flat.algolia_search(params[:query])
+      @flats = Flat.near(params[:query], 50)
+      # At query time, specify { aroundLatLng: "37.33, -121.89", aroundRadius: 50000 }
     else
       @flats = Flat.where.not(latitude: nil, longitude: nil)
     end
