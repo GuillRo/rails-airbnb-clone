@@ -18,6 +18,7 @@
     <div class="review-show-container">
       <div class="text-center">
         <h3>Recent reviews</h3>
+        <p> <em>Average rating:</em> <%= "★" * @flat.average %><%= "☆" * (5 - @flat.average ) %></p>
       </div>
       <%= render 'shared/review_card', reviews: @reviews %>
     <%if user_signed_in?%>

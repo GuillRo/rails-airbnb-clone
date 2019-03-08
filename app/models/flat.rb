@@ -14,4 +14,10 @@ class Flat < ApplicationRecord
   mount_uploader :photo, FlatPhotoUploader
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
+
+
+  def average
+    return 0 if self.reviews.empty?
+     self.reviews.inject(0){ |sum, x|  sum += x.score} / self.reviews.length
+   end
 end

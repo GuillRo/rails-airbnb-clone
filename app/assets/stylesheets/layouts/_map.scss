@@ -14,3 +14,20 @@
 .cards-container {
   flex-grow: 1;
 }
+
+.mapboxgl-popup {
+  max-width: 350px;
+  min-width:200px;
+  min-height: 100px;
+  max-height: 200px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+
+}
+
+.mapboxgl-popup-tip {
+    z-index: -2 !important;
+}
