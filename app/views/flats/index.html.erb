@@ -13,10 +13,10 @@
               <div class="flat-card-title">
                 <div class="flat-card-title-position">
                   <%= flat.title %>
-                  <p> Price: <%= flat.price %>€</p>
+                  <p> Price per night: <%= flat.price %>€</p>
                 </div>
                 <div class="flat-card-rating">
-                  <p> ★★★★☆ </p>
+                  <p><%= "★" * flat.average %><%= "☆" * (5 - flat.average ) %> </p>
                 </div>
 
               </div>
