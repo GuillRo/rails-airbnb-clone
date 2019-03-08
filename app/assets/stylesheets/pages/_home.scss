@@ -10,11 +10,17 @@
   justify-content: center;
 }
 
-.cards-row{
-  display:flex;
-  flex-wrap: wrap;
-  width: 80%;
-  justify-content: center;
+// .cards-row{
+//   display:flex;
+//   flex-wrap: wrap;
+//   width: 80%;
+//   justify-content: center;
+// }
+
+.homepage-banner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .title-main {
@@ -24,4 +30,35 @@
 
 .catch-phrase {
   padding-top: 50px;
+}
+
+
+// Search bar
+
+.algolia-places {
+  margin-top: 10px;
+  width: 300px;
+}
+
+.ap-input {
+  border-radius: 60px;
+  width: 300px;
+  position: relative;
+  font-size: 14px;
+}
+
+.ap-input-icon {
+  position: absolute;
+  right: 10px;
+
+
+}
+
+.ap-dropdown-menu {
+  width:280px;
+  margin-left: 10px;
+}
+
+.ap-suggestion {
+  font-size: 13px;
 }
