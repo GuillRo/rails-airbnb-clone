@@ -1,10 +1,4 @@
-// const contentHTML = `
-// <form autocomplete="off" action="/action_page.php">
-//   <div class="autocomplete" style="width:300px;">
-//     <input id="myInput" type="text" name="myCountry" placeholder="Country">
-//   </div>
-//   <input type="submit">
-// </form>`
+
 const algoliaSearch = () => {
   console.log("loaded")
   document.addEventListener('DOMContentLoaded', function () {
